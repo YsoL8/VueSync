@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>Title</title>
 </head>
 <body>
 
+<div id="wrapper">
+
+    <h1>Synchronised data sources edge cases test</h1>
+    <div class="row">
+        <div id="sourceA" class="smallPanel">
+            <p>This App (Local user input)</p>
+            <input id="localData" v-model="result">
+        </div>
+
+        <div id="sourceB" class="smallPanel">
+            <p>External App (Simulates GET from remote using randomised integers)</p>
+            <input id="remoteData" v-model="result" disabled>
+        </div>
+    </div>
+    <div class="row">
+        <div id="testResult" class="panel">
+            <p>Reporting to user</p>
+            <div class="output">{{result}}</div>
+            <div id="trace">
+                <p>Synchronisation actions</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="autoSync.js"></script>
 </body>
 </html>
